@@ -1,0 +1,49 @@
+#
+# Changes to this file will be overwritten by `trmnlp pull`.
+#
+# Docs:
+# - https://help.usetrmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
+# - https://intercom.help/trmnl/en/articles/10513740-custom-plugin-form-builder
+#
+---
+name: Sleeper Matchups
+no_screen_padding: 'no'
+dark_mode: 'no'
+strategy: polling
+static_data: '[]'
+polling_verb: get
+polling_url: |
+  https://api.sleeper.app/v1/league/{{league_id}}/matchups/{{week}}
+  https://api.sleeper.app/v1/league/{{league_id}}/rosters
+  https://api.sleeper.app/v1/league/{{league_id}}/users
+  https://api.sleeper.app/v1/state/nfl
+refresh_interval: 15
+id: 140922
+custom_fields:
+- keyname: author_bio
+  name: About This Plugin
+  field_type: author_bio
+  description: "Display your sleeper league matchups by week"
+  github_url: https://github.com/bnussbau/trmnl-sleeper-matchups
+  learn_more_url: https://github.com/bnussbau/trmnl-sleeper-matchups/blob/main/README.md
+- keyname: league_id
+  field_type: string
+  name: League ID
+  help_text: Get your League ID <a href="https://sleeper-league-finder.divine-wood-7de9.workers.dev/" class="underline" target="_blank">here</a>.
+- keyname: week
+  field_type: number
+  name: Week
+  description: Sorry, there isn't currently a way to automatically detect the current week.
+- keyname: reminder
+  field_type: select
+  options:
+  - "Yes"
+  - "No"
+  default: "yes"
+  name: Week Reminder
+  description: Would you like to be reminded to update the week in plugin settings?
+- keyname: league_name
+  field_type: string
+  optional: true
+  name: League Name (optional)
+  description: If you want to display the league name in the title bar.

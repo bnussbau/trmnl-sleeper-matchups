@@ -1,0 +1,46 @@
+{
+  "IDX_0": {
+    "data": [
+      {
+        "points": 99.7,
+        "roster_id": 1,
+        "matchup_id": 4
+      },
+      {
+        "points": 124,
+        "roster_id": 2,
+        "matchup_id": 3
+      },
+      {
+        "points": 85,
+        "roster_id": 3,
+        "matchup_id": 4
+      },
+      {
+        "points": 85,
+        "roster_id": 9,
+        "matchup_id": 3
+      }
+    ]
+  },
+  "IDX_1": {
+    "data": [
+      {
+        "roster_id": 1,
+        "owner_id": "1131553440896909312"
+      }
+    ]
+  },
+  "IDX_2": {
+    "data": [
+      {
+        "display_name": "sers007",
+        "metadata": {
+          "avatar": "https://sleepercdn.com/uploads/683b5053046bca57f05fbc71e2a3c90a",
+          "team_name": "Howling Wolves 🐺"
+        },
+        "user_id": "1131553440896909312"
+      }
+    ]
+  }
+}
