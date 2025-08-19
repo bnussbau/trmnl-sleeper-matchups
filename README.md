@@ -2,7 +2,7 @@
 
 A TRMNL recipe that displays real-time fantasy football league matchups from Sleeper, showing head-to-head matchups between teams with their scores and performance.
 
-
+<img width="976" height="656" alt="image" src="https://github.com/user-attachments/assets/a4abd239-0dbb-49e2-9df0-4cba7bcd870c" />
 
 ### Configuration
 
