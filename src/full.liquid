@@ -1,37 +1,35 @@
-<div class="layout">
-  <div class="stretch-y stretch-x">
-    <table class="table">
-      <thead>
-        <tr>
-          <th colspan="3" class="text--center"><span class="title">Team 1</span></th>
-          <th class="text--center"><span class="title">VS</span></th>
-          <th colspan="3" class="text--center"><span class="title">Team 2</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for matchup_id in unique_matchup_ids %}
-          {% comment %} Collect teams for this matchup {% endcomment %}
-          {% assign team1_entry = '' %}
-          {% assign team2_entry = '' %}
+<div class="layout layout--col">
+  <table class="table" data-table-limit="true">
+    <thead>
+      <tr>
+        <th colspan="3" class="text--center"><span class="title">Team 1</span></th>
+        <th class="text--center"><span class="title">VS</span></th>
+        <th colspan="3" class="text--center"><span class="title">Team 2</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for matchup_id in unique_matchup_ids %}
+        {% comment %} Collect teams for this matchup {% endcomment %}
+        {% assign team1_entry = '' %}
+        {% assign team2_entry = '' %}
 
-          {% for entry in IDX_0.data %}
-            {% assign entry_matchup_id = entry.matchup_id | append: '' %}
-            {% assign current_matchup_id = matchup_id | append: '' %}
+        {% for entry in IDX_0.data %}
+          {% assign entry_matchup_id = entry.matchup_id | append: '' %}
+          {% assign current_matchup_id = matchup_id | append: '' %}
 
-            {% if entry_matchup_id == current_matchup_id %}
-              {% if team1_entry == '' %}
-                {% assign team1_entry = entry %}
-              {% else %}
-                {% assign team2_entry = entry %}
-              {% endif %}
+          {% if entry_matchup_id == current_matchup_id %}
+            {% if team1_entry == '' %}
+              {% assign team1_entry = entry %}
+            {% else %}
+              {% assign team2_entry = entry %}
             {% endif %}
-          {% endfor %}
-
-          {% render "entry_item" with team1_entry: team1_entry, team2_entry: team2_entry, IDX_1: IDX_1, IDX_2: IDX_2, condensed: false %}
+          {% endif %}
         {% endfor %}
-      </tbody>
-    </table>
-  </div>
+
+        {% render "entry_item" with team1_entry: team1_entry, team2_entry: team2_entry, IDX_1: IDX_1, IDX_2: IDX_2, condensed: false %}
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 <div class="title_bar">

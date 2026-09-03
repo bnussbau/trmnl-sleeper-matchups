@@ -1,31 +1,44 @@
-#
-# Changes to this file will be overwritten by `trmnlp pull`.
-#
-# Docs:
-# - https://help.usetrmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
-# - https://intercom.help/trmnl/en/articles/10513740-custom-plugin-form-builder
-#
 ---
-name: Sleeper Matchups
+strategy: polling
 no_screen_padding: 'no'
 dark_mode: 'no'
-strategy: polling
-static_data: '[]'
+static_data: ''
 polling_verb: get
-polling_url: |
-  https://api.sleeper.app/v1/league/{{league_id}}/matchups/{{week}}
-  https://api.sleeper.app/v1/league/{{league_id}}/rosters
-  https://api.sleeper.app/v1/league/{{league_id}}/users
-  https://api.sleeper.app/v1/state/nfl
-refresh_interval: 15
+framework_version: 3.3.1
+serverless_language: ''
+polling_url: "https://api.sleeper.app/v1/league/{{league_id}}/matchups/{{week}}\r\nhttps://api.sleeper.app/v1/league/{{league_id}}/rosters\r\nhttps://api.sleeper.app/v1/league/{{league_id}}/users\r\nhttps://api.sleeper.app/v1/state/nfl"
+polling_headers: ''
+polling_body: ''
 id: 140922
+oauth_enabled: 'false'
+oauth_pkce_enabled: 'no'
+oauth_authorize_url: ''
+oauth_token_url: ''
+oauth_scopes: ''
+oauth_scope_separator: ''
+oauth_refresh_url: ''
+oauth_auth_params: ''
+oauth_token_headers: ''
+oauth_token_site: ''
+oauth_token_params: ''
+oauth_token_request_auth_method: ''
+oauth_body_format: ''
+oauth_token_response_metadata: ''
+oauth_authorization_method: ''
+oauth_refresh_params: ''
+oauth_token_field_name: ''
+oauth_expiry_field_name: ''
+oauth_expiry_strategy: ''
+oauth_fixed_expiry_ms: ''
 custom_fields:
 - keyname: author_bio
   name: About This Plugin
   field_type: author_bio
-  description: "Display your sleeper league matchups by week"
+  description: Display your sleeper league matchups by week [Now built on Framework 3 and optimized for TRMNL X]
+  help_text: TRMNL X Ready
   github_url: https://github.com/bnussbau/trmnl-sleeper-matchups
   learn_more_url: https://github.com/bnussbau/trmnl-sleeper-matchups/blob/main/README.md
+  email_address: trmnl@benjaminnussbaum.at
 - keyname: league_id
   field_type: string
   name: League ID
@@ -37,9 +50,9 @@ custom_fields:
 - keyname: reminder
   field_type: select
   options:
-  - "Yes"
-  - "No"
-  default: "yes"
+  - 'Yes'
+  - 'No'
+  default: 'yes'
   name: Week Reminder
   description: Would you like to be reminded to update the week in plugin settings?
 - keyname: league_name
@@ -47,3 +60,6 @@ custom_fields:
   optional: true
   name: League Name (optional)
   description: If you want to display the league name in the title bar.
+name: 'Sleeper: Matchups'
+description: Sleeper league matchups by week
+refresh_interval: 60

@@ -95,10 +95,7 @@
     </td>
   {% endif %}
   <td>
-    <span
-      class="label {% if team1_entry.points > team2_entry.points %}label--outline {% endif %}"
-      style="text-align: center;"
-    >
+    <span class="label text--center {% if team1_entry.points > team2_entry.points %}label--outline {% endif %}">
       {{ team1_entry.points }}
     </span>
   </td>
@@ -116,10 +113,7 @@
     </td>
   {% endif %}
   <td>
-    <span
-      class="label {% if team1_entry.points < team2_entry.points %}label--outline {% endif %}"
-      style="text-align: center;"
-    >
+    <span class="label text--center {% if team1_entry.points < team2_entry.points %}label--outline {% endif %}">
       {{ team2_entry.points -}}
     </span>
   </td>
