@@ -34,6 +34,7 @@ custom_fields:
 - keyname: author_bio
   name: About This Plugin
   field_type: author_bio
+  category: sports
   description: Display your sleeper league matchups by week [Now built on Framework 3 and optimized for TRMNL X]
   help_text: TRMNL X Ready
   github_url: https://github.com/bnussbau/trmnl-sleeper-matchups
